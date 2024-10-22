@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Agregar clientes</title>
+</head>
+<body>
+  <h1>Agregar producto</h1>
+    <div >
+      <form  method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar Producto</button>
+      </form>
+    </div>
+   <a href="{% url 'inicio_web' %}">Volver a inicio</a>  
+</body>
+
+</html>

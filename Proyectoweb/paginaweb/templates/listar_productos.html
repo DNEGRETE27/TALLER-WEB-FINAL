@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Lista de Productos</title>
+</head>
+<body>
+  <h1>Lista de Productos</h1>
+  <form method="GET">
+    Precio mínimo: <input type="number" name="precio_min">
+    Precio máximo: <input type="number" name="precio_max">
+    <button type="submit">Filtrar</button>
+  </form>
+
+  <form method="GET">
+    Buscar: <input type="text" name="q">
+    <button type="submit">Buscar</button>
+  </form>
+  <ul>
+    {% for producto in productos %}
+      <li>{{ producto.nombre }} - {{ producto.descripcion }} - {{ producto.precio }}- {{ producto.stock }}</li>
+    {% endfor %}
+  </ul>
+  <div>
+    {% if productos.has_previous %}
+      <a href="?page={{ productos.previous_page_number }}">Anterior</a>
+    {% endif %}
+
+    <span>Página {{ productos.number }} de {{ productos.paginator.num_pages }}</span>
+
+    {% if productos.has_next %}
+      <a href="?page={{ productos.next_page_number }}">Siguiente</a>
+    {% endif %}
+
+  </div>
+
+  
+  <a href="{% url 'agregar_productos' %}">Nuevo Producto</a>
+  <a href="{% url 'listar_clientes' %}">Ver Clientes</a>
+  <a href="{% url 'inicio_web' %}">Volver a inicio</a>
+</body>
+</html>

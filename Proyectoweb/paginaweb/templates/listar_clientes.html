@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Lista de clientes</title>
+</head>
+<body>
+  <h1>Lista de Clientes</h1>
+  <ul>
+    {% for cliente in clientes %}
+      <li>{{ cliente.nombre }} - {{ cliente.apellidos }} - {{ cliente.telefono }}-{{ cleinte.direccion }}</li>
+    {% endfor %}
+  </ul>
+  
+  <a href="{% url 'agregar_clientes' %}">Nuevo Cliente</a>
+  <a href="{% url 'inicio_web' %}">Volver a inicio</a>
+  
+</body>
+</html>

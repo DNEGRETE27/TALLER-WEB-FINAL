@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrar Venta</title>
+</head>
+<body>
+  <h1>Registrar Venta</h1>
+
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Registrar Venta</button>
+  </form>
+
+ <li><a href="{% url 'listar_ventas' %}">Volver a la lista de ventas</a></li>
+ <li><a href="{% url 'inicio_web' %}">Volver al inicio</a></li>
+</body>
+</html>
