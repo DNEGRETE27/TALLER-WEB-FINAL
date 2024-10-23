@@ -55,19 +55,24 @@
     <div>
       <form  method="post" class="form-control">
         {% csrf_token %}
-        <div class="container text-center col-4">
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Nombres" name="{{form.nombres.name}}">
+        <div class="container text-center col-6" >
+            <div class="row g-3">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Nombres" name="{{form.nombres.name}}">
+                 </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Apellidos" name="{{form.apellidos.name}}">
+                </div>
             </div>
-             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Apellidos" name="{{form.apellidos.name}}">
-             </div>
-             <div class="form-group">
-                <input type="text" class="form-control" placeholder="N. Identificacion" name="{{form.numero_identificacion.name}}">
+            <div class="row g-3">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="N. Identificacion" name="{{form.numero_identificacion.name}}">
+                </div>
+                 <div class="col">
+                    <input type="text" class="form-control" placeholder="Contacto" name="{{form.numero_contacto.name}}">
+                </div>
             </div>
-             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Contacto" name="{{form.numero_contacto.name}}">
-            </div>
+
             <div class="form-group">
                  <input type="text" class="form-control" placeholder="Direccion" name="{{form.direccion.name}}">
             </div>

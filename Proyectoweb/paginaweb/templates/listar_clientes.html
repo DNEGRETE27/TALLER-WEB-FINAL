@@ -52,11 +52,13 @@
 <br>
 <br>
 <h1 class="text-center"><p class="text-primary">Lista de Clientes</p></h1>
-  <ul>
-    {% for cliente in clientes %}
-      <li>{{ cliente.nombre }} - {{ cliente.apellidos }} - {{ cliente.telefono }}-{{ cleinte.direccion }}</li>
-    {% endfor %}
-  </ul>
+    <div class="row">
+        <ul class="col-4">
+            {% for cliente in clientes %}
+                <li>{{ cliente.nombre }} - {{ cliente.apellidos }} - {{ cliente.telefono }}-{{ cleinte.direccion }}</li>
+            {% endfor %}
+        </ul>
+    </div>
 <br>
 <br>
 <br>
