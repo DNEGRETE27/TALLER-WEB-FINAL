@@ -17,6 +17,11 @@
     </div>
     <button class="btn btn-primary">
         <div class="container-fluid text-center row col">
+            <a class="navbar-brand" href="{% url 'inicio_web' %}"><p class="text-white">Inicio</p></a>
+        </div>
+    </button>
+    <button class="btn btn-primary">
+        <div class="container-fluid text-center row col">
             <a class="navbar-brand" href="{% url 'agregar_clientes' %}"><p class="text-white">Registrarse</p></a>
         </div>
     </button>
@@ -27,7 +32,7 @@
     </button>
     <button class="btn btn-primary">
         <div class="container-fluid text-center row col">
-            <a class="navbar-brand" href="{% url 'listar_clientes'}"><p class="text-white">Listar Clientes</p></a>
+            <a class="navbar-brand" href="{% url 'listar_clientes' %}"><p class="text-white">Listar Clientes</p></a>
         </div>
     </button>
     <button class="btn btn-primary">
@@ -50,11 +55,29 @@
     <div>
       <form  method="post" class="form-control">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Guardar Producto</button>
+        <div class="container text-center col-4">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Nombres" name="{{form.nombres.name}}">
+            </div>
+             <div class="form-group">
+                <input type="text" class="form-control" placeholder="Apellidos" name="{{form.apellidos.name}}">
+             </div>
+             <div class="form-group">
+                <input type="text" class="form-control" placeholder="N. Identificacion" name="{{form.numero_identificacion.name}}">
+            </div>
+             <div class="form-group">
+                <input type="text" class="form-control" placeholder="Contacto" name="{{form.numero_contacto.name}}">
+            </div>
+            <div class="form-group">
+                 <input type="text" class="form-control" placeholder="Direccion" name="{{form.direccion.name}}">
+            </div>
+            <div>
+                <button type="submit" class="btn btn-secondary"><p class="text-white">Registrate</p></button>
+            </div>
+        </div>     
+        
       </form>
     </div>
-<a href="{% url 'inicio_web' %}">Volver a inicio</a>  
 
 <br>
 <br>
