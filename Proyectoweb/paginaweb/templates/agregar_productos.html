@@ -55,11 +55,41 @@
     <div >
       <form  method="post">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Guardar Producto</button>
+        <div class="form-group container text-center ">
+            <div class="row g-3">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Nombre" name="{form.nombre}">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Categoria" name="{form.categoria}">
+                </div>
+            </div>
+            <div class="row g-3">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Proveedor" name="{form.proveedor}">
+                </div>
+                <div class="col">
+                     <input type="text" class="form-control" placeholder="Cantidades" name="{form.cantidades}">
+                </div>
+            
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Precio" name="{form.precio}">
+                </div>
+            </div>
+            <div class="form-group">
+                <textarea name="{form.descripcion}" class="form-control" placeholder="Descripcion"></textarea>
+            </div>
+            <div class="form-group col-">
+                <textarea name="{form.detalleProducto}" class="form-control" placeholder="Detalles del Producto"></textarea>
+            
+            </div>
+            <div>
+                <button type="submit" class="btn btn-secondary">Guardar Producto</button>
+            </div>
+        </div>
+        
       </form>
     </div>
-<a href="{% url 'inicio_web' %}">Volver a inicio</a>  
 <br>
 <br>
 <br>
